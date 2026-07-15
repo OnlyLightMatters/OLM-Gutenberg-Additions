@@ -32,6 +32,11 @@ class OLM_GA_Plugin {
 
 		OLM_GA_Paragraph::init();
 
+		/* Not useful yet
+		OLM_GA_Document::init();
+		OLM_GA_Cover::init();
+		*/
+		
 	}
 
 }
