@@ -17,26 +17,70 @@ The plugin core is intentionally kept as small as possible.
 ```text
 olm-gutenberg-additions/
 
-├── assets/
-│   ├── css/
-│   └── js/
-│
-├── includes/
-│   └── class-olm-plugin.php
-│
-├── modules/
-│   ├── paragraph/
-│   ├── cover/
-│   └── document/
-│
-├── languages/
-│
-├── docs/
-│
-├── README.md
 ├── CHANGELOG.md
 ├── LICENSE
-└── olm-gutenberg-additions.php
+├── README.md
+├── VISION.md
+├── assets
+│   ├── css
+│   │   ├── editor.css
+│   │   └── frontend.css
+│   └── js
+│       └── editor.js
+├── build
+│   ├── olm-gutenberg-additions
+│   │   ├── CHANGELOG.md
+│   │   ├── LICENSE
+│   │   ├── README.md
+│   │   ├── assets
+│   │   │   ├── css
+│   │   │   │   ├── editor.css
+│   │   │   │   └── frontend.css
+│   │   │   └── js
+│   │   │       └── editor.js
+│   │   ├── includes
+│   │   │   └── class-olm-plugin.php
+│   │   ├── languages
+│   │   ├── modules
+│   │   │   ├── cover
+│   │   │   │   ├── class-olm-cover.php
+│   │   │   │   ├── olm-cover.css
+│   │   │   │   └── olm-cover.js
+│   │   │   ├── document
+│   │   │   │   ├── class-olm-document.php
+│   │   │   │   ├── olm-document.css
+│   │   │   │   └── olm-document.js
+│   │   │   └── paragraph
+│   │   │       ├── class-olm-paragraph.php
+│   │   │       ├── olm-paragraph.css
+│   │   │       └── olm-paragraph.js
+│   │   ├── olm-gutenberg-additions.php
+│   │   └── uninstall.php
+│   └── olm-gutenberg-additions-0.2.0.zip
+├── build.sh
+├── docs
+│   ├── architecture.md
+│   ├── coding-standards.md
+│   └── release-process.md
+├── includes
+│   └── class-olm-plugin.php
+├── languages
+├── modules
+│   ├── cover
+│   │   ├── class-olm-cover.php
+│   │   ├── olm-cover.css
+│   │   └── olm-cover.js
+│   ├── document
+│   │   ├── class-olm-document.php
+│   │   ├── olm-document.css
+│   │   └── olm-document.js
+│   └── paragraph
+│       ├── class-olm-paragraph.php
+│       ├── olm-paragraph.css
+│       └── olm-paragraph.js
+├── olm-gutenberg-additions.php
+├── tests
+└── uninstall.php
 ```
 
 ## Bootstrap
