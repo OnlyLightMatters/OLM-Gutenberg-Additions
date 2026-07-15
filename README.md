@@ -1,33 +1,76 @@
-# OLM Additions
+# OLM Gutenberg Additions
 
-Lightweight enhancements for the WordPress Block Editor (Gutenberg).
+Lightweight enhancements for the WordPress Block Editor.
 
-## Overview
+**OLM Gutenberg Additions** is an open-source WordPress plugin that restores and introduces carefully selected editor features that are missing from the core Block Editor, while remaining lightweight, modular and fully compatible with modern WordPress.
 
-OLM Additions provides small, focused enhancements to the native WordPress block editor without introducing custom blocks or replacing the core editing experience.
+The project was born from the discontinuation of EditorsKit and aims to provide a sustainable, maintainable alternative built on current WordPress APIs.
 
-The goal is to extend existing blocks with features that are frequently requested by users while keeping the plugin lightweight, modular and easy to maintain.
+## Philosophy
 
-## Planned features
+The project follows a few simple principles:
 
-- Paragraph text justification
-- Cover block image link
-- Hide post/page title option
-- Additional editor enhancements
+* Modular architecture: one feature, one module.
+* No unnecessary dependencies.
+* Native WordPress APIs only.
+* WordPress Coding Standards.
+* Internationalization ready.
+* Designed for long-term maintenance.
+* Every release is installable and production-ready.
 
-## Project goals
+## Features
 
-- Extend core Gutenberg blocks instead of replacing them.
-- Keep the plugin lightweight and dependency-free.
-- Use WordPress APIs whenever possible.
-- Maintain compatibility with current WordPress releases.
-- Modular architecture for future extensions.
+Current and planned modules include:
+
+* Paragraph
+
+  * Restore **Justify** alignment.
+* Cover
+
+  * Independent image link.
+* Document
+
+  * Hide page title.
+* Additional editor enhancements will be added over time.
 
 ## Requirements
 
-- WordPress 7.0 or later
-- PHP 8.1 or later
+* WordPress 7.0 or later
+* PHP 8.1 or later
+
+## Installation
+
+1. Download the latest release.
+2. Upload the plugin ZIP from **Plugins → Add New → Upload Plugin**.
+3. Activate the plugin.
+4. Enjoy the additional editor features.
+
+## Development
+
+Project development follows a simple workflow.
+
+* `main` contains stable releases.
+* `develop` contains ongoing development.
+* Every release is tagged and published on GitHub.
+
+## Roadmap
+
+The current development roadmap includes:
+
+* Paragraph module
+* Internationalization
+* Document module
+* Cover module
+* Module configuration interface
+
+See the `docs/` directory for additional project documentation.
+
+## Contributing
+
+Contributions, bug reports and feature requests are welcome.
+
+Please open an issue before submitting major changes to discuss the proposed improvement.
 
 ## License
 
-GPL-2.0-or-later
+Licensed under the GNU General Public License v2.0 or later (GPL-2.0-or-later).

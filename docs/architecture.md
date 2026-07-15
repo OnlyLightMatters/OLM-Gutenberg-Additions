@@ -1,0 +1,124 @@
+# Architecture
+
+This document describes the overall architecture of **OLM Gutenberg Additions**.
+
+Its purpose is to keep the project simple, modular and maintainable over time.
+
+## Design principles
+
+The plugin follows a modular architecture.
+
+Each feature is implemented as an independent module responsible for its own PHP, JavaScript and CSS assets.
+
+The plugin core is intentionally kept as small as possible.
+
+## Directory structure
+
+```text
+olm-gutenberg-additions/
+
+├── assets/
+│   ├── css/
+│   └── js/
+│
+├── includes/
+│   └── class-olm-plugin.php
+│
+├── modules/
+│   ├── paragraph/
+│   ├── cover/
+│   └── document/
+│
+├── languages/
+│
+├── docs/
+│
+├── README.md
+├── CHANGELOG.md
+├── LICENSE
+└── olm-gutenberg-additions.php
+```
+
+## Bootstrap
+
+The plugin entry point is:
+
+```text
+olm-gutenberg-additions.php
+```
+
+Its responsibilities are limited to:
+
+* defining plugin constants;
+* loading the main plugin class;
+* starting the plugin.
+
+Business logic must never be implemented here.
+
+## Plugin core
+
+The plugin core is implemented in:
+
+```text
+includes/class-olm-plugin.php
+```
+
+Its responsibilities are:
+
+* initialize the plugin;
+* load modules;
+* register shared assets;
+* initialize shared services.
+
+It should remain lightweight.
+
+## Modules
+
+Each feature lives in its own directory.
+
+Example:
+
+```text
+modules/
+
+    paragraph/
+
+        class-olm-paragraph.php
+
+        olm-paragraph.js
+
+        olm-paragraph.css
+```
+
+Every module owns its implementation.
+
+Whenever possible, modules should not depend on one another.
+
+## Shared assets
+
+Global editor assets belong to:
+
+```text
+assets/
+```
+
+Module-specific assets belong inside their respective module directory.
+
+## Coding philosophy
+
+Each source file should have a single responsibility.
+
+Classes should remain focused and easy to understand.
+
+Code readability is preferred over clever implementations.
+
+## Future evolution
+
+The architecture is designed to support:
+
+* optional modules;
+* settings page;
+* internationalization;
+* additional editor enhancements.
+
+New features should follow the same modular organization rather than extending existing modules whenever possible.
