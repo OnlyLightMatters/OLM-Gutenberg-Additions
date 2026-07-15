@@ -51,4 +51,4 @@ Features will only be added when they solve a real editing problem while remaini
 Success is not measured by downloads or popularity.
 Success is achieved when the plugin remains useful, reliable and enjoyable to maintain, while helping other users who may share the same needs.
 
-I built it because I needed it. I share it because it may help others.
+_I built it because I needed it. I share it because it may help others._
