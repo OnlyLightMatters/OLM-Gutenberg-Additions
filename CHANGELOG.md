@@ -20,6 +20,22 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/) 
 
 ---
 
+## [0.3.0] - Ferruccio Busoni - 2026-07-15
+
+### Added
+
+* Introduced the first modular feature architecture.
+* Added the Paragraph module and the justify functionality
+* Restored the Justify alignment button for the Paragraph block toolbar.
+* Moved the Paragraph editor functionality from the active theme into the plugin.
+
+### Changed
+* Refactored the plugin bootstrap to load independent feature modules.
+* Moved editor assets from global loading to module-specific loading.
+* Adopted consistent OLM naming conventions across classes, files and asset handles.
+
+---
+
 ## [0.2.0] - 2026-07-14
 
 ### Added

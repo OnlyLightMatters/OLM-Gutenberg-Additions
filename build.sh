@@ -15,14 +15,18 @@ rsync -av \
     --exclude=".gitignore" \
     --exclude=".editorconfig" \
     --exclude="*.zip" \
+    --exclude="VISION.md" \
     --exclude="build.sh" \
     --exclude="build" \
+    --exclude="docs" \
     --exclude="tests" \
     ./build/$PLUGIN
 
 cd build
 
 zip -rq ${PLUGIN}-${VERSION}.zip $PLUGIN
+
+cd ..
 
 echo
 echo "Package created:"
