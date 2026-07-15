@@ -25,9 +25,9 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/) 
 ### Added
 
 * Introduced the first modular feature architecture.
-* Added the Paragraph module and the justify functionality
-* Restored the Justify alignment button for the Paragraph block toolbar.
-* Moved the Paragraph editor functionality from the active theme into the plugin.
+* Added the Paragraph module with justify alignment support.
+* Restored the Justify alignment button to the Paragraph block toolbar.
+* Selected Paragraph blocks in the Gutenberg editor are now justified on the frontend.
 
 ### Changed
 * Refactored the plugin bootstrap to load independent feature modules.

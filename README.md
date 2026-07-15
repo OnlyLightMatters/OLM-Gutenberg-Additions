@@ -22,15 +22,18 @@ The project follows a few simple principles:
 
 Current and planned modules include:
 
-* Paragraph
+* Paragraph block
 
-  * Restore **Justify** alignment.
-* Cover
+  * Restores **Justify** alignment for text formatting.
+
+* Cover block
 
   * Independent image link.
+
 * Document
 
   * Hide page title.
+  
 * Additional editor enhancements will be added over time.
 
 ## Requirements
