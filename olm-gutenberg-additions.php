@@ -3,7 +3,7 @@
  * Plugin Name: OLM Gutenberg Additions
  * Plugin URI: https://github.com/onlylightmatters/OLM-Gutenberg-Additions
  * Description: Lightweight enhancements for the WordPress Block Editor.
- * Version: 0.3.0
+ * Version: 0.3.1
  * Requires at least: 7.0
  * Requires PHP: 8.1
  * Author: Only Light Matters
