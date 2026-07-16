@@ -18,7 +18,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-define( 'OLM_GA_VERSION', '0.3.0' );
+define( 'OLM_GA_VERSION', '0.3.1' );
 define( 'OLM_GA_PATH', plugin_dir_path( __FILE__ ) );
 define( 'OLM_GA_URL', plugin_dir_url( __FILE__ ) );
 
