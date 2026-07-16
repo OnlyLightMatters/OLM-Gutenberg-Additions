@@ -5,29 +5,34 @@ set -e
 PLUGIN="olm-gutenberg-additions"
 VERSION="0.3.0"
 
-rm -rf build
-mkdir -p build
+BUILD_DIR="build"
+PACKAGE_DIR="${BUILD_DIR}/${PLUGIN}"
+
+rm -rf "${BUILD_DIR}"
+mkdir -p "${PACKAGE_DIR}"
 
 rsync -av \
     --exclude=".git" \
     --exclude=".github" \
-    --exclude=".gitattributes" \
     --exclude=".gitignore" \
+    --exclude=".gitattributes" \
     --exclude=".editorconfig" \
-    --exclude="*.zip" \
+    --exclude="olm-gutenberg-additions.sublime-project" \
+    --exclude="olm-gutenberg-additions.sublime-workspace" \
     --exclude="VISION.md" \
     --exclude="build.sh" \
+    --exclude="build.ps1" \
     --exclude="build" \
     --exclude="docs" \
     --exclude="tests" \
-    ./build/$PLUGIN
+    ./ "${PACKAGE_DIR}/"
 
-cd build
+cd "${BUILD_DIR}"
 
-zip -rq ${PLUGIN}-${VERSION}.zip $PLUGIN
+zip -r "${PLUGIN}-${VERSION}.zip" "${PLUGIN}"
 
 cd ..
 
 echo
 echo "Package created:"
-echo "build/${PLUGIN}-${VERSION}.zip"
+echo "${BUILD_DIR}/${PLUGIN}-${VERSION}.zip"
