@@ -1,0 +1,15 @@
+/*
+ * Paragraph block customizations
+ */
+
+/* Gutenberg editor */
+.editor-styles-wrapper .has-text-align-justify {
+    text-align: justify;
+    hyphens: auto;
+}
+
+/* Frontend content */
+.has-text-align-justify {
+	text-align: justify;
+	hyphens: auto;
+}
