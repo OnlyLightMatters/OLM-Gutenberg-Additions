@@ -24,7 +24,7 @@
 			PluginDocumentSettingPanel,
 			{
 				name: 'olm-ga-document',
-				title: __('OLM Document', 'olm-gutenberg-additions'),
+				title: __('Document Properties', 'olm-gutenberg-additions'),
 			},
 			el(CheckboxControl, {
 				label: __('Hide title on frontend', 'olm-gutenberg-additions'),
@@ -41,6 +41,24 @@
 		);
 
 	}
+
+	function updateTitleOpacity() {
+
+		const title = document.querySelector( '.wp-block-post-title' );
+
+		if ( ! title ) {
+			return;
+		}
+
+		if ( wp.data.select( 'core/editor' ).getEditedPostAttribute( 'meta' )[ META_KEY ] ) {
+			title.classList.add( 'olm-ga-hide-title' );
+		} else {
+			title.classList.remove( 'olm-ga-hide-title' );
+		}
+
+	}
+
+	wp.data.subscribe( updateTitleOpacity );
 
 	registerPlugin('olm-ga-document', {
 		render: OLM_GA_HideTitlePanel,

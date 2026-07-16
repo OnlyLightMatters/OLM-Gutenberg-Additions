@@ -1,7 +1,6 @@
 .DS_Store
 Thumbs.db
 *.log
-VISION.md
 .vscode/
 .idea/
 build/
