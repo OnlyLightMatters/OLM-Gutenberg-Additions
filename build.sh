@@ -3,7 +3,21 @@
 set -e
 
 PLUGIN="olm-gutenberg-additions"
-VERSION="0.3.0"
+
+PLUGIN_FILE="${PLUGIN}.php"
+
+if [ ! -f "${PLUGIN_FILE}" ]; then
+    echo "Error: ${PLUGIN_FILE} not found"
+    exit 1
+fi
+
+VERSION=$(grep "define( *'OLM_GA_VERSION'" "${PLUGIN_FILE}" | sed -E "s/.*define\( *'OLM_GA_VERSION', *'([^']+)'.*/\1/")
+
+if [ -z "${VERSION}" ]; then
+    echo "Error: OLM_GA_VERSION not found in ${PLUGIN_FILE}"
+    exit 1
+fi
+
 
 BUILD_DIR="build"
 PACKAGE_DIR="${BUILD_DIR}/${PLUGIN}"

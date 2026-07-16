@@ -20,7 +20,20 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/) 
 
 ---
 
+## [0.3.1] - Edgard Varèse - 2026-07-16
+
+### Name origin
+* Named after Edgard Varèse, a foundational figure in the evolution from traditional composition toward sound as structure, texture, and spatial energy.
+
+### Changed
+* Prepares the i18n plugin infrastructure.
+
+---
+
 ## [0.3.0] - Ferruccio Busoni - 2026-07-15
+
+### Name origin
+* Ferruccio Busoni brought one of the earliest visions of a future music freed from traditional constraints and open to new sound possibilities.
 
 ### Added
 

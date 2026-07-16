@@ -1,6 +1,8 @@
 (function (wp) {
 	'use strict';
 
+	const { __ } = wp.i18n;
+
 	const { createHigherOrderComponent } = wp.compose;
 	const { BlockControls } = wp.blockEditor;
 	const { ToolbarGroup, ToolbarButton } = wp.components;
@@ -71,12 +73,12 @@
 						el(
 							ToolbarGroup,
 							{},
-							el(ToolbarButton, {
-								icon: 'editor-justify',
-								label: 'Justify',
-								isActive: isActive,
-								onClick: () => toggleJustify(props),
-							})
+ 							el(ToolbarButton, {
+ 								icon: 'editor-justify',
+								label: __('Justify', 'olm-gutenberg-additions'),
+ 								isActive: isActive,
+ 								onClick: () => toggleJustify(props),
+ 							})
 						)
 					)
 				);
