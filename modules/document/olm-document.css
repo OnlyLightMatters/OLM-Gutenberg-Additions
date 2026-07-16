@@ -1,0 +1,6 @@
+/* Only the Editor is concerned by Style effects */
+
+.editor-styles-wrapper .wp-block-post-title.olm-ga-hide-title {
+	opacity: 0.5;
+	transition: opacity 0.2s ease-in-out;
+}

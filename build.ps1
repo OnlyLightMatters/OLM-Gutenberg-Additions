@@ -1,86 +1,70 @@
-# ------------------------------------------------------------
-#  build.ps1 – version PowerShell du script Bash
-# ------------------------------------------------------------
+$ErrorActionPreference = "Stop"
 
-# Arrêt immédiat à la première erreur (équivalent de `set -e`)
-$ErrorActionPreference = 'Stop'
+$PLUGIN = "olm-gutenberg-additions"
+$PLUGIN_FILE = "$PLUGIN.php"
 
-# -------------------   Variables   -------------------------
-$PLUGIN  = 'olm-gutenberg-additions'
-$VERSION = '0.3.0'
-
-# Répertoire racine du script (où se trouve build.ps1)
-$RootDir = $PSScriptRoot
-
-# Répertoire de travail « build »
-$BuildDir = Join-Path -Path $RootDir -ChildPath 'build'
-
-# ----------------------------------------------------------------
-# 1️⃣  Nettoyage du répertoire build
-# ----------------------------------------------------------------
-if (Test-Path $BuildDir) {
-    Remove-Item -Path $BuildDir -Recurse -Force -ErrorAction SilentlyContinue
+if (-not (Test-Path $PLUGIN_FILE)) {
+    Write-Error "Error: $PLUGIN_FILE not found"
+    exit 1
 }
-New-Item -Path $BuildDir -ItemType Directory | Out-Null
 
-# ----------------------------------------------------------------
-# 2️⃣  Copie sélective du plugin dans le répertoire build
-# ----------------------------------------------------------------
-$SourceDir = Join-Path -Path $RootDir -ChildPath "build\$PLUGIN"
-$DestDir   = Join-Path -Path $BuildDir -ChildPath $PLUGIN
+$content = Get-Content $PLUGIN_FILE -Raw
 
-# Patterns à exclure (même logique que les `--exclude` de rsync)
-$ExcludePatterns = @(
-    '.git',
-    '.github',
-    '.gitattributes',
-    '.gitignore',
-    '.editorconfig',
-    '*.zip',
-    'build.sh',
-    'build',
-    'tests'
+if ($content -match "define\(\s*'OLM_GA_VERSION'\s*,\s*'([^']+)'") {
+    $VERSION = $matches[1]
+} else {
+    Write-Error "Error: OLM_GA_VERSION not found in $PLUGIN_FILE"
+    exit 1
+}
+
+$BUILD_DIR = "build"
+$PACKAGE_DIR = Join-Path $BUILD_DIR $PLUGIN
+
+if (Test-Path $BUILD_DIR) {
+    Remove-Item $BUILD_DIR -Recurse -Force
+}
+
+New-Item -ItemType Directory -Path $PACKAGE_DIR -Force | Out-Null
+
+$excludes = @(
+    ".git",
+    ".github",
+    ".gitignore",
+    ".gitattributes",
+    ".editorconfig",
+    "olm-gutenberg-additions.sublime-project",
+    "olm-gutenberg-additions.sublime-workspace",
+    "VISION.md",
+    "build.sh",
+    "build.ps1",
+    "build",
+    "docs",
+    "tests"
 )
 
-# Crée le dossier de destination
-New-Item -Path $DestDir -ItemType Directory -Force | Out-Null
+Get-ChildItem -Force | Where-Object {
+    $excludes -notcontains $_.Name
+} | ForEach-Object {
+    Copy-Item $_.FullName -Destination $PACKAGE_DIR -Recurse -Force
+}
 
-# Copie tout en filtrant les exclusions
-Get-ChildItem -Path $SourceDir -Recurse -Force |
-    Where-Object {
-        $keep = $true
-        foreach ($pat in $ExcludePatterns) {
-            if ($_.FullName -like "*$pat*") { $keep = $false; break }
-        }
-        $keep
-    } |
-    ForEach-Object {
-        $relative = $_.FullName.Substring($SourceDir.Length).TrimStart('\')
-        $target   = Join-Path -Path $DestDir -ChildPath $relative
+$zipPath = Join-Path $BUILD_DIR "$PLUGIN-$VERSION.zip"
 
-        if ($_.PSIsContainer) {
-            # Crée le sous‑dossier si besoin
-            if (-not (Test-Path $target)) {
-                New-Item -Path $target -ItemType Directory | Out-Null
-            }
-        }
-        else {
-            # Copie le fichier
-            Copy-Item -Path $_.FullName -Destination $target -Force
-        }
-    }
+Add-Type -AssemblyName System.IO.Compression.FileSystem
 
-# ----------------------------------------------------------------
-# 3️⃣  Création de l’archive ZIP
-# ----------------------------------------------------------------
-$ZipName   = "$PLUGIN-$VERSION.zip"
-$ZipPath   = Join-Path -Path $BuildDir -ChildPath $ZipName
+if (Test-Path $zipPath) {
+    Remove-Item $zipPath -Force
+}
 
-# `Compress-Archive` prend le chemin complet du dossier à zipper
-Compress-Archive -Path $DestDir -DestinationPath $ZipPath -Force
+Push-Location $BUILD_DIR
 
-# ----------------------------------------------------------------
-# 4️⃣  Affichage du résultat
-# ----------------------------------------------------------------
-Write-Host "`nPackage created:"
-Write-Host "build/$ZipName"
+Compress-Archive `
+    -Path ".\$PLUGIN" `
+    -DestinationPath ".\$PLUGIN-$VERSION.zip" `
+    -CompressionLevel Optimal
+
+Pop-Location
+
+Write-Host ""
+Write-Host "Package created:"
+Write-Host $zipPath

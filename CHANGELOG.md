@@ -20,6 +20,20 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/) 
 
 ---
 
+## [0.4.0] - Luigi Russolo - 2026-07-16
+
+### Name origin
+* Named after Luigi Russolo, a pioneer of the idea that non-musical sounds could become musical material.
+
+### Added
+* Document Module with Hiding Title feature.
+* "Hide Title" checkbox added in the Document settings
+* If a title is hidden the <H1> core/post-title is not rendered. 
+* HTML <title> not impacted
+* new `docs/roadmap.md` file
+
+---
+
 ## [0.3.1] - Edgard Varèse - 2026-07-16
 
 ### Name origin
