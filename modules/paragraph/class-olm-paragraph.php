@@ -50,9 +50,16 @@ class OLM_GA_Paragraph {
 				'wp-compose',
 				'wp-element',
 				'wp-hooks',
+				'wp-i18n',
 			],
 			OLM_GA_VERSION,
 			true
+		);
+
+		wp_set_script_translations(
+			'olm-ga-paragraph',
+			'olm-gutenberg-additions',
+			OLM_GA_PATH . 'languages'
 		);
 
 		wp_enqueue_style(
