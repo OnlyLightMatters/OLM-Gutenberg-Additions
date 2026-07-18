@@ -31,15 +31,13 @@ rsync -av \
     --exclude=".gitignore" \
     --exclude=".gitattributes" \
     --exclude=".editorconfig" \
-    --exclude="olm-gutenberg-additions.sublime-project" \
-    --exclude="olm-gutenberg-additions.sublime-workspace" \
     --exclude="VISION.md" \
-    --exclude="build.sh" \
-    --exclude="build.ps1" \
-    --exclude="build" \
-    --exclude="docs" \
-    --exclude="tests" \
-    --exclude="tools" \
+    --exclude="_build" \
+    --exclude="_dist" \
+    --exclude="_tests" \
+    --exclude="_docs" \
+    --exclude="languages/*.pot" \
+    --exclude="languages/*.po" \
     ./ "${PACKAGE_DIR}/"
 
 cd "${DIST_DIR}"

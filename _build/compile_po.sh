@@ -1,6 +1,11 @@
 #!/usr/bin/env bash
 
 # Compile all .po files from ../languages into .mo files
+# creates json from .po
+#
+# Needs
+# WP-CLI (wp) from https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar
+# msgfmt from the gettext package
 
 set -e
 
@@ -40,3 +45,11 @@ if [ "$count" -eq 0 ]; then
 else
     echo "$count translation file(s) compiled successfully."
 fi
+
+
+if ! command -v wp >/dev/null 2>&1; then
+    echo "Error: wp not found. Please install WP-CLI (https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar)."
+    exit 1
+fi
+
+wp i18n make-json languages --no-purge

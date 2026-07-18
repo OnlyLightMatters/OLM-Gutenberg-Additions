@@ -23,8 +23,6 @@ olm-gutenberg-additions/
 ├── README.md
 ├── VISION.md
 ├── olm-gutenberg-additions.php
-├── olm-gutenberg-additions.sublime-project
-├── olm-gutenberg-additions.sublime-workspace
 ├── uninstall.php
 ├── assets
 │   ├── css
