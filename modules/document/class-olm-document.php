@@ -55,8 +55,29 @@ class OLM_GA_Document {
 			true
 		);
 
+		wp_set_script_translations(
+			'olm-ga-document',
+			'olm-gutenberg-additions',
+			OLM_GA_PATH . 'languages'
+		);
+
+		/*
+		* v0.4.0 Note (see VISION.md for more details) 
+		* Will be used on day if API allows to interact with the rendering of core/title
+		* 
+		wp_enqueue_style(
+			'olm-ga-paragraph',
+			OLM_GA_URL . 'modules/paragraph/olm-paragraph.css',
+			[],
+			OLM_GA_VERSION
+		);
+		*/
+
 	}
 
+	/*
+	* We are only intereted in a Document Title for a Single Post or Page display
+	*/
 	public static function filter_title( $title, $post_id ) {
 
 		if ( is_admin() ) {

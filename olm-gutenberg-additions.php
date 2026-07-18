@@ -21,6 +21,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 define( 'OLM_GA_VERSION', '0.4.0' );
 define( 'OLM_GA_PATH', plugin_dir_path( __FILE__ ) );
 define( 'OLM_GA_URL', plugin_dir_url( __FILE__ ) );
+define( 'OLM_GA_FILE', __FILE__ );
 
 require_once OLM_GA_PATH . 'includes/class-olm-plugin.php';
 

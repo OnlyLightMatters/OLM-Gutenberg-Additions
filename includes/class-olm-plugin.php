@@ -31,6 +31,8 @@ class OLM_GA_Plugin {
 	 */
 	public static function init() {
 
+		add_action( 'init', [ __CLASS__, 'load_textdomain' ] );
+
 		OLM_GA_Paragraph::init();
 		OLM_GA_Document::init();
 
@@ -40,6 +42,21 @@ class OLM_GA_Plugin {
 		
 		*/
 		
+	}
+
+	/**
+	 * Load plugin translations.
+	 *
+	 * @return void
+	 */
+	public static function load_textdomain() {
+
+		load_plugin_textdomain(
+			'olm-gutenberg-additions',
+			false,
+			dirname( plugin_basename( OLM_GA_FILE ) ) . '/languages'
+		);
+
 	}
 
 }

@@ -17,3 +17,7 @@ msgstr "Propriétés du document"
 #: modules/document/olm-document.js
 msgid "Hide Title on frontend"
 msgstr "Masquer le titre sur le site"
+
+#: modules/paragraph/olm-paragraph.js
+msgid "Justify"
+msgstr "Justifier"
