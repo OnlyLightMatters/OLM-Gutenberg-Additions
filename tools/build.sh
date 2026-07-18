@@ -39,6 +39,7 @@ rsync -av \
     --exclude="build" \
     --exclude="docs" \
     --exclude="tests" \
+    --exclude="tools" \
     ./ "${PACKAGE_DIR}/"
 
 cd "${BUILD_DIR}"
