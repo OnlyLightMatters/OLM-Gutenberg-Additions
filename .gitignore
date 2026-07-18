@@ -3,6 +3,6 @@ Thumbs.db
 *.log
 .vscode/
 .idea/
-build/
+_dist/
 olm-gutenberg-additions.sublime-workspace
 olm-gutenberg-additions.sublime-project
