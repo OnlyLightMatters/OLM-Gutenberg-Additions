@@ -12,7 +12,8 @@ Prefix: OLM_GA_*
 Example: class OLM_GA_Block_Renderer { }
 ```
 
-### PHP Functions
+### PHP Classes and Functions
+Classes use namespace `OLM\GutenbergAdditions` with prefix `OLM_GA_*` for class names.
 ```php
 Prefix: olm_ga_*
 Example: function olm_ga_enqueue_assets() { }
@@ -46,7 +47,7 @@ Example: __('String to translate', 'olm-gutenberg-additions');
 | ----------- | --------------------------------- | ---------------------------- |
 | PHP         | WordPress Coding Standards (WPCS) | PHPCS mandatory              |
 | JavaScript  | ES6+ compatible                   | No transpilation required    |
-| Namespaces  | None                              | Prefix-based naming instead  |
+| Namespaces  | Yes                               | `OLM\GutenbergAdditions`     |
 | Build       | None                              | No Node.js / npm required    |
 
 ---
