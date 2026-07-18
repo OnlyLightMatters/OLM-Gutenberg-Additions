@@ -17,54 +17,33 @@ The plugin core is intentionally kept as small as possible.
 ```text
 olm-gutenberg-additions/
 
+.
 ├── CHANGELOG.md
 ├── LICENSE
 ├── README.md
 ├── VISION.md
+├── olm-gutenberg-additions.php
+├── olm-gutenberg-additions.sublime-project
+├── olm-gutenberg-additions.sublime-workspace
+├── uninstall.php
 ├── assets
 │   ├── css
-│   │   ├── editor.css
-│   │   └── frontend.css
+│   │   ├── olm-editor.css
+│   │   └── olm-frontend.css
 │   └── js
-│       └── editor.js
+│       └── olm-editor.js
 ├── build
-│   ├── olm-gutenberg-additions
-│   │   ├── CHANGELOG.md
-│   │   ├── LICENSE
-│   │   ├── README.md
-│   │   ├── assets
-│   │   │   ├── css
-│   │   │   │   ├── editor.css
-│   │   │   │   └── frontend.css
-│   │   │   └── js
-│   │   │       └── editor.js
-│   │   ├── includes
-│   │   │   └── class-olm-plugin.php
-│   │   ├── languages
-│   │   ├── modules
-│   │   │   ├── cover
-│   │   │   │   ├── class-olm-cover.php
-│   │   │   │   ├── olm-cover.css
-│   │   │   │   └── olm-cover.js
-│   │   │   ├── document
-│   │   │   │   ├── class-olm-document.php
-│   │   │   │   ├── olm-document.css
-│   │   │   │   └── olm-document.js
-│   │   │   └── paragraph
-│   │   │       ├── class-olm-paragraph.php
-│   │   │       ├── olm-paragraph.css
-│   │   │       └── olm-paragraph.js
-│   │   ├── olm-gutenberg-additions.php
-│   │   └── uninstall.php
-│   └── olm-gutenberg-additions-0.2.0.zip
-├── build.sh
 ├── docs
 │   ├── architecture.md
 │   ├── coding-standards.md
-│   └── release-process.md
+│   ├── release-process.md
+│   ├── roadmap.md
+│   └── tree.txt
 ├── includes
 │   └── class-olm-plugin.php
 ├── languages
+│   ├── *.mo / *.po
+│   └── olm-gutenberg-additions.pot
 ├── modules
 │   ├── cover
 │   │   ├── class-olm-cover.php
@@ -78,9 +57,11 @@ olm-gutenberg-additions/
 │       ├── class-olm-paragraph.php
 │       ├── olm-paragraph.css
 │       └── olm-paragraph.js
-├── olm-gutenberg-additions.php
 ├── tests
-└── uninstall.php
+└── tools
+    ├── build.ps1
+    ├── build.sh
+    └── compile_po.sh
 ```
 
 ## Bootstrap
