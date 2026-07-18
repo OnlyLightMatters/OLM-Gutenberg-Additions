@@ -20,17 +20,23 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/) 
 
 ---
 
-## [0.4.0] - Luigi Russolo - 2026-07-16
+## [0.4.0] - Luigi Russolo - 2026-07-18
 
 ### Name origin
 * Named after Luigi Russolo, a pioneer of the idea that non-musical sounds could become musical material.
 
 ### Added
 * Document Module with Hiding Title feature.
-* "Hide Title" checkbox added in the Document settings
-* If a title is hidden the <H1> core/post-title is not rendered. 
-* HTML <title> not impacted
-* new `docs/roadmap.md` file
+* "Hide Title on frontend" checkbox added in the Document settings
+* If a title is hidden the <H1> core/post-title is not rendered. HTML <title> is not impacted
+* Localization provided for fr_FR, it_IT, es_ES, de_DE, zh_CN, ja_JP, ko_KRs
+* New `docs/roadmap.md` file
+* VISION.md updated
+
+### Changed
+
+* Repo architecture to sepate plugin foldes from specific project folders
+
 
 ---
 
