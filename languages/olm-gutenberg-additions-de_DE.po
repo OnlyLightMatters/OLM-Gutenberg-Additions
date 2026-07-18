@@ -1,10 +1,10 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: OLM-Gutenberg-additions v0.4.0\n"
-"PO-Revision-Date: 2026-07-17 22:35-0300\n"
+"PO-Revision-Date: 2026-07-17 21:49-0300\n"
 "Last-Translator:  <onlylightmatters@github.com>\n"
-"Language-Team: Spanish <es@tp.org.es>\n"
-"Language: es\n"
+"Language-Team: German <translation-team-de@lists.sourceforge.net>\n"
+"Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -12,8 +12,12 @@ msgstr ""
 
 #: modules/document/olm-document.js
 msgid "Document Properties"
-msgstr "Propiedades del documento"
+msgstr "Dokumenteigenschaften"
 
 #: modules/document/olm-document.js
 msgid "Hide Title on frontend"
-msgstr "Ocultar el título en el sitio web"
+msgstr "Titel im Frontend ausblenden"
+
+#: modules/paragraph/olm-paragraph.js
+msgid "Justify"
+msgstr "Blocksatz"

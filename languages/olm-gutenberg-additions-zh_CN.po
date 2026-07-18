@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "PO-Revision-Date: 2026-07-17 22:02-0300\n"
-"Last-Translator:  <yann@duna.>\n"
+"Last-Translator:  <onlylightmatters@github.com>\n"
 "Language-Team: Chinese (simplified) <i18n-zh@googlegroups.com>\n"
 "Language: zh_CN\n"
 "MIME-Version: 1.0\n"
@@ -16,3 +16,7 @@ msgstr "文档属性"
 #: modules/document/olm-document.js
 msgid "Hide Title on frontend"
 msgstr "在前端隐藏标题"
+
+#: modules/paragraph/olm-paragraph.js
+msgid "Justify"
+msgstr "两端对齐"

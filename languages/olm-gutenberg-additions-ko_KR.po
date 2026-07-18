@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "PO-Revision-Date: 2026-07-17 22:03-0300\n"
-"Last-Translator:  <yann@duna.>\n"
+"Last-Translator:  <onlylightmatters@github.com>\n"
 "Language-Team: Korean <translation-team-ko@googlegroups.com>\n"
 "Language: ko\n"
 "MIME-Version: 1.0\n"
@@ -17,3 +17,7 @@ msgstr "문서 속성"
 #: modules/document/olm-document.js
 msgid "Hide Title on frontend"
 msgstr "프론트엔드에서 제목 숨기기"
+
+#: modules/paragraph/olm-paragraph.js
+msgid "Justify"
+msgstr "양쪽 정렬"
