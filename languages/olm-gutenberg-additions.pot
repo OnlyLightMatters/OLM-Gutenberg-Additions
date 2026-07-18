@@ -1,0 +1,11 @@
+#: modules/document/olm-document.js
+msgid "Document Properties"
+msgstr ""
+
+#: modules/document/olm-document.js
+msgid "Hide Title on frontend"
+msgstr ""
+
+#: modules/paragraph/olm-paragraph.js
+msgid "Justify"
+msgstr ""

@@ -1,0 +1,11 @@
+| Version   | Name                   | Objective                                                                                                                                                       | Status |
+| --------- | ---------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------ |
+| **0.1.0** | Initial Architecture   | Create the repository, establish the modular architecture, bootstrap the plugin, define the module structure, and provide the initial documentation.            | ✅      |
+| **0.2.0** | Plugin Bootstrap       | Load the plugin into WordPress, register assets, and validate the architecture on a WordPress 7 installation.                                                   | ✅      |
+| **0.3.0** | Paragraph Justify      | First functional module: restore the **Justify** button for Paragraph blocks, including frontend rendering support.                                             | ✅      |
+| **0.3.1** | Internationalization   | Prepare internationalization (i18n): configure `Domain Path`, integrate `wp-i18n`, use `wp_set_script_translations()`, and add the `languages/` infrastructure. | ✅      |
+| **0.4.0** | Hide Title             | **Document** module: hide the title of a page or post through the Gutenberg Document settings without removing the native WordPress title.                      | ⏳      |
+| **0.5.0** | Cover Image Link       | **Cover** module: add an independent link to the image within a Cover block via the floating toolbar, with Polylang compatibility.                              | ⏳      |
+| **0.6.0** | Module Settings        | Add a plugin settings page to enable or disable modules and configure the first options (e.g., hyphenation).                                                    | ⏳      |
+| **0.7.0** | Polish & Accessibility | Improve code quality, accessibility, and performance; ensure compliance with WordPress Coding Standards; and introduce initial compatibility testing.           | ⏳      |
+| **1.0.0** | First Stable Release   | First stable release intended for public distribution.                                                                                                          | ⏳      |

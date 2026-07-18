@@ -52,3 +52,21 @@ Success is not measured by downloads or popularity.
 Success is achieved when the plugin remains useful, reliable and enjoyable to maintain, while helping other users who may share the same needs.
 
 _I built it because I needed it. I share it because it may help others._
+
+## Post title visual feedback
+
+A visual indication (for example reducing the title opacity in the editor when "Hide title on frontend" is enabled) was considered during the development of v0.4.0.
+
+This feature has deliberately not been implemented.
+
+### Rationale
+
+Since WordPress 7.0, the document title is no longer exposed as a standard Gutenberg block. It is rendered internally by the `PostTitle` React component (`packages/editor/src/components/post-title`) and inserted directly by the `VisualEditor` component.
+
+At the time of writing, Gutenberg does not expose any official extension point (hook, filter, SlotFill or public API) allowing plugins to alter the rendering or styling of this component.
+
+Implementing this behaviour would require manipulating Gutenberg's internal DOM or relying on undocumented React internals. This project deliberately avoids such approaches to remain lightweight, stable and compatible with future WordPress releases.
+
+### Future
+
+This feature may be revisited if Gutenberg exposes an official API allowing plugins to customize the editor rendering of the document title.

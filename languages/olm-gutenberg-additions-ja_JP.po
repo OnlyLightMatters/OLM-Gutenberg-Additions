@@ -1,0 +1,23 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"PO-Revision-Date: 2026-07-17 22:03-0300\n"
+"Last-Translator:  <onlylightmatters@github.com>\n"
+"Language-Team: Japanese <translation-team-ja@lists.sourceforge.net>\n"
+"Language: ja\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: modules/document/olm-document.js
+msgid "Document Properties"
+msgstr "ドキュメントのプロパティ"
+
+#: modules/document/olm-document.js
+msgid "Hide Title on frontend"
+msgstr "フロントエンドでタイトルを非表示にする"
+
+#: modules/paragraph/olm-paragraph.js
+msgid "Justify"
+msgstr "両端揃え"

@@ -1,9 +1,8 @@
 .DS_Store
 Thumbs.db
 *.log
-VISION.md
 .vscode/
 .idea/
-build/
+_dist/
 olm-gutenberg-additions.sublime-workspace
 olm-gutenberg-additions.sublime-project

@@ -4,8 +4,8 @@
 
 /* Gutenberg editor */
 .editor-styles-wrapper .has-text-align-justify {
-    text-align: justify;
-    hyphens: auto;
+	text-align: justify;
+	hyphens: auto;
 }
 
 /* Frontend content */

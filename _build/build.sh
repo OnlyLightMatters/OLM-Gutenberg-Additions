@@ -19,10 +19,10 @@ if [ -z "${VERSION}" ]; then
 fi
 
 
-BUILD_DIR="build"
-PACKAGE_DIR="${BUILD_DIR}/${PLUGIN}"
+DIST_DIR="_dist"
+PACKAGE_DIR="${DIST_DIR}/${PLUGIN}"
 
-rm -rf "${BUILD_DIR}"
+rm -rf "${DIST_DIR}"
 mkdir -p "${PACKAGE_DIR}"
 
 rsync -av \
@@ -31,17 +31,16 @@ rsync -av \
     --exclude=".gitignore" \
     --exclude=".gitattributes" \
     --exclude=".editorconfig" \
-    --exclude="olm-gutenberg-additions.sublime-project" \
-    --exclude="olm-gutenberg-additions.sublime-workspace" \
     --exclude="VISION.md" \
-    --exclude="build.sh" \
-    --exclude="build.ps1" \
-    --exclude="build" \
-    --exclude="docs" \
-    --exclude="tests" \
+    --exclude="_build" \
+    --exclude="_dist" \
+    --exclude="_tests" \
+    --exclude="_docs" \
+    --exclude="languages/*.pot" \
+    --exclude="languages/*.po" \
     ./ "${PACKAGE_DIR}/"
 
-cd "${BUILD_DIR}"
+cd "${DIST_DIR}"
 
 zip -r "${PLUGIN}-${VERSION}.zip" "${PLUGIN}"
 
@@ -49,4 +48,4 @@ cd ..
 
 echo
 echo "Package created:"
-echo "${BUILD_DIR}/${PLUGIN}-${VERSION}.zip"
+echo "${DIST_DIR}/${PLUGIN}-${VERSION}.zip"
