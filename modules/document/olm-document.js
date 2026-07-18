@@ -27,7 +27,7 @@
 				title: __( 'Document Properties', 'olm-gutenberg-additions' ),
 			},
 			el( CheckboxControl, {
-				label: __( 'Hide title on frontend', 'olm-gutenberg-additions' ),
+				label: __( 'Hide Title on frontend', 'olm-gutenberg-additions' ),
 				checked: !! meta[ META_KEY ],
 				onChange: ( checked ) => {
 					editPost( {
