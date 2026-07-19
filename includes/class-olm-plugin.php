@@ -7,11 +7,10 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /**
- * Load the different modules.
+ * Load the Paragraph module.
  */
 require_once OLM_GA_PATH . 'modules/paragraph/class-olm-paragraph.php';
 require_once OLM_GA_PATH . 'modules/document/class-olm-document.php';
-require_once OLM_GA_PATH . 'modules/cover/class-olm-cover.php';
 
 /**
  * Main plugin bootstrap.
@@ -36,8 +35,13 @@ class OLM_GA_Plugin {
 
 		OLM_GA_Paragraph::init();
 		OLM_GA_Document::init();
-		OLM_GA_Cover::init();
 
+		/* Not useful yet
+		
+		OLM_GA_Cover::init();
+		
+		*/
+		
 	}
 
 	/**

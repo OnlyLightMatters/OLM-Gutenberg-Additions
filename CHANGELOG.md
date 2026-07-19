@@ -20,17 +20,6 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/) 
 
 ---
 
-## [0.5.0] - Pierre Schaeffer - 2026-07-XX
-
-### Name origin
-* Pierre Schaeffer was the founder of musique concrète and of the idea of listening to sound itself as an object.
-
-### Added
-* Cover Module with independant link on the image in addition to the text.
-
-
----
-
 ## [0.4.0] - Luigi Russolo - 2026-07-18
 
 ### Name origin
@@ -40,13 +29,13 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/) 
 * Document Module with Hiding Title feature.
 * "Hide Title on frontend" checkbox added in the Document settings
 * If a title is hidden the <H1> core/post-title is not rendered. HTML <title> is not impacted
-* Localization provided for fr_FR, it_IT, es_ES, de_DE, zh_CN, ja_JP, ko_KR
+* Localization provided for fr_FR, it_IT, es_ES, de_DE, zh_CN, ja_JP, ko_KRs
 * New `docs/roadmap.md` file
 * VISION.md updated
 
 ### Changed
 
-* Repo architecture to sepate plugin folders from specific project folders
+* Repo architecture to sepate plugin foldes from specific project folders
 
 
 ---

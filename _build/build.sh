@@ -38,7 +38,6 @@ rsync -av \
     --exclude="_docs" \
     --exclude="languages/*.pot" \
     --exclude="languages/*.po" \
-    --exclude="*.txt" \
     ./ "${PACKAGE_DIR}/"
 
 cd "${DIST_DIR}"

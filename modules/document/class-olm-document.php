@@ -1,16 +1,5 @@
 <?php
 
-/*
- * OLM Gutenberg Additions
- *
- * @package OLM_Gutenberg_Additions
- * @author  Only Light Matters
- * @link    https://github.com/onlylightmatters/olm-gutenberg-additions
- *
- * @license GPL-2.0-or-later
- */
-
-
 namespace OLM\GutenbergAdditions;
 
 if ( ! defined( 'ABSPATH' ) ) {
