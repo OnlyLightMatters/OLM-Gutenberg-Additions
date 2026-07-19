@@ -1,0 +1,140 @@
+(function (wp) {
+	'use strict';
+
+	const { __ } = wp.i18n;
+
+	const { createHigherOrderComponent } = wp.compose;
+	const { BlockControls } = wp.blockEditor;
+	const { LinkControl } = wp.blockEditor;
+	const { ToolbarGroup, ToolbarButton, Popover } = wp.components;
+	const { Fragment, createElement: el, useState } = wp.element;
+	const { addFilter } = wp.hooks;
+	const { registerBlockType } = wp.blocks;
+
+	const OLM_GA_SUPPORTED_BLOCKS = [
+		'core/cover',
+	];
+
+	/**
+	 * Register custom attributes on the Cover block.
+	 */
+	function OLM_GA_AddCoverAttributes( settings, name ) {
+
+		if ( !OLM_GA_SUPPORTED_BLOCKS.includes( name ) ) {
+			return settings;
+		}
+
+		settings.attributes = {
+			...settings.attributes,
+			linkUrl: {
+				type: 'string',
+				default: '',
+			},
+			linkTarget: {
+				type: 'string',
+				default: '_self',
+			},
+		};
+
+		return settings;
+
+	}
+
+	addFilter(
+		'blocks.registerBlockType',
+		'olm-ga/cover-link-attributes',
+		OLM_GA_AddCoverAttributes
+	);
+
+	/**
+	 * Add link control to Cover block toolbar.
+	 */
+	const OLM_GA_AddCoverLinkControl = createHigherOrderComponent(
+		(BlockEdit) => {
+
+			return (props) => {
+
+				if (!OLM_GA_SUPPORTED_BLOCKS.includes(props.name)) {
+					return el(BlockEdit, props);
+				}
+
+				const { attributes, setAttributes } = props;
+				const { linkUrl = '', linkTarget = '_self' } = attributes;
+
+				const [isLinkOpen, setIsLinkOpen] = useState(false);
+
+				const handleLinkChange = (value) => {
+					setAttributes({
+						linkUrl: value?.url || '',
+						linkTarget: value?.opensInNewTab ? '_blank' : '_self',
+					});
+				};
+
+				const handleRemoveLink = () => {
+					setAttributes({
+						linkUrl: '',
+						linkTarget: '_self',
+					});
+					setIsLinkOpen(false);
+				};
+
+				return el(
+					Fragment,
+					{},
+					el(BlockEdit, props),
+					el(
+						BlockControls,
+						{},
+						el(
+							ToolbarGroup,
+							{},
+							el(ToolbarButton, {
+								icon: 'admin-links',
+								label: linkUrl
+									? __('Edit Cover Link', 'olm-gutenberg-additions')
+									: __('Add Cover Link', 'olm-gutenberg-additions'),
+								isActive: !!linkUrl,
+								onClick: () => setIsLinkOpen(!isLinkOpen),
+							}),
+							linkUrl && el(ToolbarButton, {
+								icon: 'editor-unlink',
+								label: __('Remove Cover Link', 'olm-gutenberg-additions'),
+								onClick: handleRemoveLink,
+							}),
+						),
+					),
+					isLinkOpen && el(
+						Popover,
+						{
+							placement: 'bottom',
+							onClose: () => setIsLinkOpen(false),
+						},
+						el(
+							'div',
+							{ style: { padding: '8px' } },
+							el(LinkControl, {
+								value: {
+									url: linkUrl || '',
+									opensInNewTab: linkTarget === '_blank',
+								},
+								onChange: handleLinkChange,
+								onRemove: handleRemoveLink,
+								forceIsEditingLink: true,
+							})
+						)
+					),
+				);
+
+			};
+
+		},
+		'OLM_GA_AddCoverLinkControl'
+	);
+
+	addFilter(
+		'editor.BlockEdit',
+		'olm-ga/cover-link',
+		OLM_GA_AddCoverLinkControl
+	);
+
+})(window.wp);

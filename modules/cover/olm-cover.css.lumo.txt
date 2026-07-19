@@ -1,0 +1,21 @@
+/* Frontend */
+/*
+ * CSS Cover block customizations
+ */
+
+/* Overlay link covering the entire Cover block */
+/* Only frontend is concerned */
+.olm-cover-link-overlay {
+	display: block;
+	position: absolute;
+	inset: 0;
+	z-index: 1;
+	text-decoration: none;
+	background: transparent;
+}
+
+/* Ensure inner content stays above the overlay */
+.wp-block-cover.olm-cover-is-linked .wp-block-cover__inner-container {
+	position: relative;
+	z-index: 2;
+}

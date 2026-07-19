@@ -1,0 +1,125 @@
+<?php
+
+namespace OLM\GutenbergAdditions;
+
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
+/**
+ * Cover module.
+ *
+ * Adds independent link functionality to Cover block.
+ */
+class OLM_GA_Cover {
+
+	/**
+	 * Initialize the module.
+	 *
+	 * @return void
+	 */
+	public static function init() {
+
+		add_action( 'enqueue_block_editor_assets', [ __CLASS__, 'enqueue_editor_assets' ] );
+		add_action( 'wp_enqueue_scripts', [ __CLASS__, 'enqueue_frontend_assets' ] );
+		add_filter( 'render_block', [ __CLASS__, 'render_cover_link' ], 10, 2 );
+
+	}
+
+	/**
+	 * Enqueue editor assets.
+	 *
+	 * @return void
+	 */
+	public static function enqueue_editor_assets() {
+
+		wp_enqueue_script(
+			'olm-ga-cover',
+			OLM_GA_URL . 'modules/cover/olm-cover.js',
+			[
+				'wp-block-editor',
+				'wp-blocks',
+				'wp-components',
+				'wp-compose',
+				'wp-element',
+				'wp-hooks',
+				'wp-i18n',
+			],
+			OLM_GA_VERSION,
+			true
+		);
+
+		wp_set_script_translations(
+			'olm-ga-cover',
+			'olm-gutenberg-additions',
+			OLM_GA_PATH . 'languages'
+		);
+
+	}
+
+	/**
+	 * Enqueue frontend assets.
+	 *
+	 * @return void
+	 */
+	public static function enqueue_frontend_assets() {
+
+		wp_enqueue_style(
+			'olm-ga-cover',
+			OLM_GA_URL . 'modules/cover/olm-cover.css',
+			[],
+			OLM_GA_VERSION
+		);
+
+	}
+
+	/**
+	 * Inject an overlay link inside the Cover block if a link is configured.
+	 *
+	 * @param string $block_content The block content.
+	 * @param array  $block         The block data.
+	 * @return string The modified block content.
+	 */
+	public static function render_cover_link( $block_content, $block ) {
+
+		if ( 'core/cover' !== $block['blockName'] ) {
+			return $block_content;
+		}
+
+		$link_url = isset( $block['attrs']['linkUrl'] ) ? esc_url_raw( $block['attrs']['linkUrl'] ) : '';
+
+		if ( empty( $link_url ) ) {
+			return $block_content;
+		}
+
+		$target = isset( $block['attrs']['linkTarget'] ) && '_blank' === $block['attrs']['linkTarget']
+			? '_blank'
+			: '_self';
+
+		$rel = '_blank' === $target ? 'noopener noreferrer' : '';
+
+		$aria_label = __( 'Cover image link', 'olm-gutenberg-additions' );
+
+		$overlay = '<a href="' . esc_url( $link_url ) . '" class="olm-cover-link-overlay" target="' . esc_attr( $target ) . '"' . ( $rel ? ' rel="' . esc_attr( $rel ) . '"' : '' ) . ' aria-label="' . esc_attr( $aria_label ) . '"></a>';
+
+		// Insert the overlay right after the opening wp-block-cover div.
+		$block_content = preg_replace(
+			'/(<div[^>]*class="[^"]*wp-block-cover[^"]*"[^>]*>)/i',
+			'$1' . $overlay,
+			$block_content,
+			1
+		);
+
+		// Mark the cover as linked for CSS targeting.
+		$block_content = preg_replace(
+			'/(<div[^>]*class="[^"]*wp-block-cover[^"]*)"/',
+			'$1 olm-cover-is-linked"',
+			$block_content,
+			1
+		);
+
+		return $block_content;
+
+	}
+
+}

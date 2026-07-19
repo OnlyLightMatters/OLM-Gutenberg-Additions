@@ -1,0 +1,25 @@
+/*
+ * CSS Cover block customizations
+ */
+
+/* Gutenberg editor */
+/* -> no specificity */
+
+
+
+/* Frontend */
+.wp-block-cover {
+	position: relative;
+}
+
+.olm-cover-link-overlay {
+	position: absolute;
+	inset: 0;
+	z-index: 1;
+	display: block;
+}
+
+.wp-block-cover__inner-container {
+	position: relative;
+	z-index: 2;
+}

@@ -1,20 +1,3 @@
-/*
- * OLM Gutenberg Additions
- *
- * @package OLM_Gutenberg_Additions
- * @author Only Light Matters
- *
- * @link https://github.com/onlylightmatters/olm-gutenberg-additions
- *
- * @license GPL-2.0-or-later
- */
-
-/*
- * Javascript customizations
- * Interactivity and UX of the Cover module
- */
-
-
 (function (wp) {
 	'use strict';
 
@@ -24,6 +7,37 @@
 	const { Fragment } = wp.element;
 	const { InspectorControls, URLInputButton } = wp.blockEditor;
 	const { PanelBody, ToggleControl } = wp.components;
+
+	/**
+	 * Add custom attributes.
+	 */
+	function addAttributes(settings, name) {
+
+		if (name !== 'core/cover') {
+			return settings;
+		}
+
+		settings.attributes = {
+			...settings.attributes,
+			olmHref: {
+				type: 'string',
+				default: '',
+			},
+			olmOpensInNewTab: {
+				type: 'boolean',
+				default: false,
+			},
+		};
+
+		return settings;
+
+	}
+
+	addFilter(
+		'blocks.registerBlockType',
+		'olm-ga/cover/attributes',
+		addAttributes
+	);
 
 	/**
 	 * Add controls to Cover block.
