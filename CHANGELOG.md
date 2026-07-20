@@ -20,6 +20,26 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/) 
 
 ---
 
+## [0.5.0] - Pierre Schaeffer - 2026-07-20
+
+### Name origin
+* Pierre Schaeffer was the founder of musique concrète and of the idea of listening to sound itself as an object.
+
+### Added
+* Cover module: independent link functionality for Cover blocks.
+* "Add Cover Link" button added to the Cover block floating toolbar.
+* Link configuration via standard WordPress LinkControl (URL or internal post/page selection).
+* "Remove Cover Link" button when a link is active.
+* Overlay `<a>` element injected on frontend via `render_block` filter.
+* `olm-cover-is-linked` class added to linked Cover blocks for CSS targeting.
+* Accessibility: `aria-label` on the overlay link.
+* Localization provided for fr_FR, it_IT, es_ES, de_DE, zh_CN, ja_JP, ko_KR.
+
+### Changed
+* Plugin version bumped to 0.5.0.
+* Cover module activated in plugin bootstrap (`class-olm-plugin.php`).
+---
+
 ## [0.4.0] - Luigi Russolo - 2026-07-18
 
 ### Name origin
@@ -29,13 +49,13 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/) 
 * Document Module with Hiding Title feature.
 * "Hide Title on frontend" checkbox added in the Document settings
 * If a title is hidden the <H1> core/post-title is not rendered. HTML <title> is not impacted
-* Localization provided for fr_FR, it_IT, es_ES, de_DE, zh_CN, ja_JP, ko_KRs
+* Localization provided for fr_FR, it_IT, es_ES, de_DE, zh_CN, ja_JP, ko_KR
 * New `docs/roadmap.md` file
 * VISION.md updated
 
 ### Changed
 
-* Repo architecture to sepate plugin foldes from specific project folders
+* Repo architecture to sepate plugin folders from specific project folders
 
 
 ---

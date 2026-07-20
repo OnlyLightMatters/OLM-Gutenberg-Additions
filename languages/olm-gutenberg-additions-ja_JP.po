@@ -21,3 +21,15 @@ msgstr "フロントエンドでタイトルを非表示にする"
 #: modules/paragraph/olm-paragraph.js
 msgid "Justify"
 msgstr "両端揃え"
+
+#: modules/cover/olm-cover.js
+msgid "Add Cover Link"
+msgstr "カバーにリンクを追加"
+
+#: modules/cover/olm-cover.js
+msgid "Edit Link"
+msgstr "リンクを編集"
+
+#: modules/cover/olm-cover.js
+msgid "Remove Link"
+msgstr "リンクを削除"

@@ -21,3 +21,15 @@ msgstr "Nascondi il titolo nel frontend"
 #: modules/paragraph/olm-paragraph.js
 msgid "Justify"
 msgstr "Giustifica"
+
+#: modules/cover/olm-cover.js
+msgid "Add Cover Link"
+msgstr "Aggiungi collegamento alla copertina"
+
+#: modules/cover/olm-cover.js
+msgid "Edit Link"
+msgstr "Modifica link"
+
+#: modules/cover/olm-cover.js
+msgid "Remove Link"
+msgstr "Rimuovi link"

@@ -1,3 +1,19 @@
+/*
+ * OLM Gutenberg Additions
+ *
+ * @package OLM_Gutenberg_Additions
+ * @author Only Light Matters
+ *
+ * @link https://github.com/onlylightmatters/olm-gutenberg-additions
+ *
+ * @license GPL-2.0-or-later
+ */
+
+/*
+ * Javascript customizations
+ * Interactivity and UX of the Document module
+ */ 
+
 (function (wp) {
 	'use strict';
 

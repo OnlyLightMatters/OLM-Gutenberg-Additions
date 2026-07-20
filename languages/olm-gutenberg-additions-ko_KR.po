@@ -21,3 +21,15 @@ msgstr "프론트엔드에서 제목 숨기기"
 #: modules/paragraph/olm-paragraph.js
 msgid "Justify"
 msgstr "양쪽 정렬"
+
+#: modules/cover/olm-cover.js
+msgid "Add Cover Link"
+msgstr "커버 링크 추가"
+
+#: modules/cover/olm-cover.js
+msgid "Edit Link"
+msgstr "링크 편집"
+
+#: modules/cover/olm-cover.js
+msgid "Remove Link"
+msgstr "링크 제거"

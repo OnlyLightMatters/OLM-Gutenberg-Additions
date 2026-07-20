@@ -22,9 +22,10 @@ The project follows a few simple principles:
 
 Current and planned modules include:
 
-* Paragraph block : restores **Justify** alignment for text formatting.
-* Cover block : Independent image link.
-* Document (Page/Post) : Hide page title.
+* ✅ Paragraph block : restores **Justify** alignment for text formatting.
+* ✅ Cover block : Independent image link.
+* ✅ Document (Page/Post) : Hide page title.
+* Add a settings page to enable or disable modules and configure the first options (e.g., hyphenation
 * Maybe additional editor enhancements will be added over time.
 
 ## Requirements

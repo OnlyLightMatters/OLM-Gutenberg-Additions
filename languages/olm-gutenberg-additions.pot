@@ -1,3 +1,4 @@
+# Document Strings
 #: modules/document/olm-document.js
 msgid "Document Properties"
 msgstr ""
@@ -6,6 +7,24 @@ msgstr ""
 msgid "Hide Title on frontend"
 msgstr ""
 
+# Paragraph Strings
 #: modules/paragraph/olm-paragraph.js
 msgid "Justify"
+msgstr ""
+
+# Cover Module Strings
+#: modules/cover/class-olm-cover.php
+msgid "Cover image link"
+msgstr ""
+
+#: modules/cover/olm-cover.js
+msgid "Add Cover Link"
+msgstr ""
+
+#: modules/cover/olm-cover.js
+msgid "Edit Cover Link"
+msgstr ""
+
+#: modules/cover/olm-cover.js
+msgid "Remove Cover Link"
 msgstr ""

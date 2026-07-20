@@ -20,3 +20,15 @@ msgstr "在前端隐藏标题"
 #: modules/paragraph/olm-paragraph.js
 msgid "Justify"
 msgstr "两端对齐"
+
+#: modules/cover/olm-cover.js
+msgid "Add Cover Link"
+msgstr "添加封面链接"
+
+#: modules/cover/olm-cover.js
+msgid "Edit Link"
+msgstr "编辑链接"
+
+#: modules/cover/olm-cover.js
+msgid "Remove Link"
+msgstr "移除链接"
