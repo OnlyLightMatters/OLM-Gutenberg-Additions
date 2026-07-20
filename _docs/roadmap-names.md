@@ -20,3 +20,4 @@
 | 18 | Maryanne Amacher      | Psychoacoustics, physical perception of sound, and immersive listening experiences.                                   |
 | 19 | Paul Jebanasam        | A contemporary descendant: deep electronic drones, density, and spatial depth.                                        |
 | 20 | Kali Malone           | Contemporary continuation of sustained tones, just intonation, and slow evolving harmonic fields.                     |
+| 21 | Iannis Xenakis        | Builder of immersive structures from stochastic processes and mathematical precision.                                 |

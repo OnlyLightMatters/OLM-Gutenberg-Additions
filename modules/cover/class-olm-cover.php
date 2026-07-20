@@ -69,17 +69,11 @@ class OLM_GA_Cover {
 
 	public static function render_cover_link( $block_content, $block ) {
 
-		error_log( '[OLM Cover] Block name: ' . $block['blockName'] );
-
 		if ( 'core/cover' !== $block['blockName'] ) {
 			return $block_content;
 		}
 
-		error_log( '[OLM Cover] Checking attrs: ' . print_r( $block['attrs'], true ) );
-
 		$link_url = isset( $block['attrs']['linkUrl'] ) ? $block['attrs']['linkUrl'] : '';
-
-		error_log( '[OLM Cover] Link URL: ' . $link_url );
 
 		if ( empty( $link_url ) ) {
 			return $block_content;
@@ -105,13 +99,11 @@ class OLM_GA_Cover {
 		);
 
 		$block_content = preg_replace(
-			'/(<div\s)([^>]*class=")([^"]*\bwp-block-cover\b[^"]*)([^>]*>)/',
-			'$1$2$3 olm-cover-is-linked"$4' . $overlay,
+			'/(<div class=")([^"]*wp-block-cover[^"]*)("[^>]*>)/',
+			'$1$2 olm-cover-is-linked$3' . $overlay,
 			$block_content,
 			1
 		);
-
-		error_log( '[OLM Cover] Modified content length: ' . strlen( $block_content ) );
 
 		return $block_content;
 

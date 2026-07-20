@@ -18,26 +18,19 @@
 	const { __ } = wp.i18n;
 
 	const { createHigherOrderComponent } = wp.compose;
-	const { BlockControls } = wp.blockEditor;
-	const { LinkControl } = wp.blockEditor;
+	const { BlockControls, LinkControl } = wp.blockEditor;
 	const { ToolbarGroup, ToolbarButton, Popover } = wp.components;
 	const { Fragment, createElement: el, useState } = wp.element;
 	const { addFilter } = wp.hooks;
-
-	console.log('[OLM Cover] Loading script');
 
 	const OLM_GA_SUPPORTED_BLOCKS = [ 'core/cover' ];
 
 	// Declare custom attributes on Cover block
 	function OLM_GA_AddCoverAttributes( settings, name ) {
 
-		console.log('[OLM Cover] Registering block:', name);
-
 		if ( ! OLM_GA_SUPPORTED_BLOCKS.includes( name ) ) {
 			return settings;
 		}
-
-		console.log('[OLM Cover] Adding attributes to Cover block');
 
 		settings.attributes = {
 			...settings.attributes,
@@ -65,25 +58,18 @@
 	const OLM_GA_AddCoverLinkControl = createHigherOrderComponent(
 		(BlockEdit) => {
 
-			console.log('[OLM Cover] HOC loaded for:', props.name);
-
 			return (props) => {
 
 				if ( ! OLM_GA_SUPPORTED_BLOCKS.includes( props.name ) ) {
-					console.log('[OLM Cover] Skipping non-Cover block:', props.name);
 					return el( BlockEdit, props );
 				}
 
 				const { attributes, setAttributes } = props;
 				const { linkUrl = '', linkTarget = '_self' } = attributes;
 
-				console.log('[OLM Cover] Current attrs:', { linkUrl, linkTarget });
-
 				const [ isLinkOpen, setIsLinkOpen ] = useState( false );
 
 				const handleLinkChange = ( value ) => {
-
-					console.log('[OLM Cover] Link changed:', value);
 
 					setAttributes({
 						linkUrl: value?.url || '',
@@ -94,8 +80,6 @@
 				};
 
 				const handleRemoveLink = () => {
-
-					console.log('[OLM Cover] Removing link');
 
 					setAttributes({
 						linkUrl: '',
@@ -118,7 +102,7 @@
 							linkUrl ?
 								el( ToolbarButton, {
 									icon: 'admin-links',
-									label: __( 'Edit Cover Link', 'olm-gutenberg-additions' ),
+									label: __( 'Edit Link', 'olm-gutenberg-additions' ),
 									isActive: true,
 									onClick: () => setIsLinkOpen( ! isLinkOpen ),
 								} ) :
@@ -129,7 +113,7 @@
 								} ),
 							linkUrl && el( ToolbarButton, {
 								icon: 'editor-unlink',
-								label: __( 'Remove Cover Link', 'olm-gutenberg-additions' ),
+								label: __( 'Remove Link', 'olm-gutenberg-additions' ),
 								onClick: handleRemoveLink,
 							} )
 						),
@@ -161,7 +145,5 @@
 		'olm-ga/cover-link',
 		OLM_GA_AddCoverLinkControl
 	);
-
-	console.log('[OLM Cover] Script fully loaded');
 
 })( window.wp );

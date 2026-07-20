@@ -21,3 +21,15 @@ msgstr "Titel im Frontend ausblenden"
 #: modules/paragraph/olm-paragraph.js
 msgid "Justify"
 msgstr "Blocksatz"
+
+#: modules/cover/olm-cover.js
+msgid "Add Cover Link"
+msgstr "Cover-Link hinzufügen"
+
+#: modules/cover/olm-cover.js
+msgid "Edit Link"
+msgstr "Link bearbeiten"
+
+#: modules/cover/olm-cover.js
+msgid "Remove Link"
+msgstr "Link entfernen"

@@ -21,3 +21,15 @@ msgstr "Ocultar el título en el sitio web"
 #: modules/paragraph/olm-paragraph.js
 msgid "Justify"
 msgstr "Justificar"
+
+#: modules/cover/olm-cover.js
+msgid "Add Cover Link"
+msgstr "Añadir enlace a la portada"
+
+#: modules/cover/olm-cover.js
+msgid "Edit Link"
+msgstr "Editar el enlace"
+
+#: modules/cover/olm-cover.js
+msgid "Remove Link"
+msgstr "Eliminar el enlace"
